@@ -46,8 +46,6 @@ module Namae
 
   # @yield [Hash] the parser's default configuration.
   def configure
-    result = yield Parser.defaults
-    Parser.instance(false)
-    result
+    yield Parser.defaults
   end
 end

@@ -27,12 +27,8 @@ module_eval(<<'...end parser.y/module_eval...', 'parser.y', 106)
   class << self
     attr_reader :defaults
 
-    def instance(cached = true)
-      if cached
-        Thread.current[:namae] ||= new
-      else
-        Thread.current[:namae] = new
-      end
+    def instance
+      Thread.current[:namae] ||= new
     end
   end
 

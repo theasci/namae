@@ -7,10 +7,6 @@ module Namae
         expect(parser).to be_a(Parser)
       end
 
-      it 'returns a new instance when the cache is skipped' do
-        expect(parser).not_to eq(Parser.instance(false))
-      end
-
       describe '#next_token' do
 				before(:each) do
 					Parser.instance.reset
